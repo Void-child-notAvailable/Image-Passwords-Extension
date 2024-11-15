@@ -4,7 +4,6 @@
   "version": "1.0",
   "description": "Use an image as a password!",
   "action": {
-    "default_popup": "popup.html",
     "default_icon": "assets/icon.png"
   },
   "icons": {

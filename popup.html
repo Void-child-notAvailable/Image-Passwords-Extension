@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Generator</title>
+    <title>Extension Popup</title>
     <style>
-        /* Add your previous CSS here */
-        .add-icon-btn {
-            margin-left: 5px;
-            cursor: pointer;
+        body {
+            font-family: Arial, sans-serif;
+            width: 300px; 
+            padding: 10px;
+            background-color: #f9f9f9;
+            overflow: hidden; 
         }
     </style>
 </head>
 <body>
-
-<!-- Simulate a form with a password input -->
-<form>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password">
-    <button type="button" class="add-icon-btn" onclick="triggerFileInput()">🔒</button>
-</form>
-
-<!-- Hidden file input for image selection -->
-<input type="file" id="imageInput" accept="image/*" style="display:none" onchange="handleFileSelection(event)">
-<script src="extension.js"></script>
-
+    <div class="container">
+        <h1>Test Password Field</h1>
+        <div class="input-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <button class="lock-button">🔒</button>
+        </div>
+    </div>
 </body>
 </html>
