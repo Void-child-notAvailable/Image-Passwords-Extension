@@ -1,5 +1,5 @@
 function isPasswordField(input) {
-  return input.type === 'password' || input.name === 'password' || input.name === 'Password';
+  return (input.type === 'password' || input.name === 'password' || input.name === 'Password') && input.type != 'hidden';
 }
 
 function simulateKeyboardInput(element, value) {
