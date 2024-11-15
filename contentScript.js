@@ -25,17 +25,11 @@ async function addButtonsToPasswordFields() {
 
     passwordFields.forEach((passwordField) => {
       buttonmade=1
-      passwordField.style.position = 'absolute';
-      hei=passwordField.offsetHeight;
-      wid=passwordField.offsetWidth;
-      console.log(wid);
-
       const button = document.createElement('button');
       button.innerText = '🔒';
-      button.style.position = 'relative';
-      button.style.top = '-'+hei/2+'px';
-      button.style.right = '-'+wid+'px';
-      button.style.transform = 'translateX(-50%)';
+      button.style.position = 'absolute';
+      button.style.top = (passwordField.offsetTop + passwordField.offsetHeight/2) + 'px';
+      button.style.left = (passwordField.offsetLeft - 10) + 'px';
       button.style.backgroundColor = 'transparent';
       button.style.border = 'none';
       button.type = 'button';
@@ -69,6 +63,10 @@ async function addButtonsToPasswordFields() {
         document.body.removeChild(fileInput);
       });
       passwordField.parentNode.insertBefore(button, passwordField.nextSibling);
+      console.log(passwordField.getBoundingClientRect().top + " \n");
+      console.log(passwordField.getBoundingClientRect().right + " \n\n");
+      console.log(button.getBoundingClientRect().top + " \n");
+      console.log(button.getBoundingClientRect().right + " \n");
     }
   );
 }
@@ -85,7 +83,6 @@ function throttle(fn, wait) {
 }
 
 const observer = new MutationObserver(throttle(() => {
-  // console.log("hi");
   addButtonsToPasswordFields();
 }, 1000)); 
 
